@@ -15,6 +15,12 @@ export const metadata: Metadata = {
     description: 'Organize seu amigo oculto de forma fácil e divertida!',
     type: 'website',
   },
+  verification: {
+    google: 'your-google-verification-code-here',
+  },
+  other: {
+    'google-adsense-account': 'ca-pub-7388889234325669',
+  },
 };
 
 export default function RootLayout({
@@ -24,6 +30,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          crossOrigin="anonymous"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}",
+                enable_page_level_ads: true
+              });
+            `,
+          }}
+        />
+      </head>
       <body className={inter.className}>
         <div className="min-h-screen bg-gradient-to-br from-christmas-red/10 via-white to-christmas-green/10">
           <Toaster
