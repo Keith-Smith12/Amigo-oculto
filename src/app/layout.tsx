@@ -15,6 +15,12 @@ export const metadata: Metadata = {
     description: 'Organize seu amigo oculto de forma fácil e divertida!',
     type: 'website',
   },
+  verification: {
+    google: 'your-google-verification-code-here',
+  },
+  other: {
+    'google-adsense-account': 'ca-pub-7388889234325669',
+  },
 };
 
 export default function RootLayout({

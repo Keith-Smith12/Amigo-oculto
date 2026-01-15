@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amigooculto.space/sitemap.xml
