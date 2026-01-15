@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { FaGift, FaUsers, FaUserFriends, FaRandom, FaListAlt, FaSnowflake } from 'react-icons/fa';
 import { supabase } from '@/lib/supabase';
 import { User } from '@/types/database';
+import AdSense from '@/components/AdSense';
 
 export default function Home() {
   const [user, setUser] = useState<User | null>(null);
@@ -178,6 +179,16 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-white text-center mb-12">
             Funcionalidades
           </h2>
+          
+          {/* AdSense Banner */}
+          <div className="mb-8 flex justify-center">
+            <AdSense 
+              adSlot="1234567890" 
+              className="w-full max-w-[728px] h-[90px]"
+              style={{ width: '728px', height: '90px' }}
+            />
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
               <Link
@@ -206,6 +217,16 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-white text-center mb-12">
             Como Funciona?
           </h2>
+          
+          {/* AdSense Square Ad */}
+          <div className="mb-8 flex justify-center">
+            <AdSense 
+              adSlot="0987654321" 
+              className="w-full max-w-[336px] h-[280px]"
+              style={{ width: '336px', height: '280px' }}
+            />
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
               { step: '1', title: 'Regista-te', desc: 'Cria a tua conta gratuita' },
